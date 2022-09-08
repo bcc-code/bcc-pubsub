@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BccCode.PubSub.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize(Scopes.Subscribe)]
     public class SubscriptionsController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
